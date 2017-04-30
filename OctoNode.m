@@ -2,6 +2,7 @@ classdef OctoNode
     
     properties (GetAccess = 'public', SetAccess = 'public')
         % Constructor for the class
+        index = 0;
         center = zeros(3,1); %Center of the node
         depth = 0;
         log_likelihood = 0;
