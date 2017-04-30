@@ -19,5 +19,5 @@ t0 = max([tx0 ty0 tz0]);
 t1 = min([tx1 ty1 tz1]);
 
 dist_check = ~(t0>Ray.distance & t1>Ray.distance);
-value = (t0<t1) & (dist_check);   
+value = (t0<t1) & (dist_check);
 end
