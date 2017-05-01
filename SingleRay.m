@@ -7,4 +7,7 @@ classdef SingleRay
         distance = 0;
         is_in_range = true;
     end
+    
+    
+    
 end

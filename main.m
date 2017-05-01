@@ -11,13 +11,14 @@ set(RootNode,'index',i);
 
 % First ray comes here
 ray = SingleRay;
-ray.origin = [-100;70;1];
-ray.direction = [1;1;0];
-ray.distance = 250;
+ray.origin = [-200;70;1];
+ray.direction = [1;0;0];
+ray.distance = 150;
 ray.endpoint = ray.origin+ray.distance.*(ray.direction);
 
 explore_octree(RootNode, ray);
 
 figure
 visualize_octree(RootNode)
+colorbar
 view(138,60)
