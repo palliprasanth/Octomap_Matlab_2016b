@@ -18,11 +18,11 @@ if value == 1
             set(Node,'children',Kids);
             Node.set_children_centers();
             for iter = 1:8
-                explore_octree(Kids(iter), Ray)
+                explore_octree(Kids(iter), Ray);
             end
         else
             for iter = 1:8
-                explore_octree(Kids(iter), Ray)
+                explore_octree(Kids(iter), Ray);
             end
         end
     else

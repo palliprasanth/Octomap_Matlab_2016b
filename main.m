@@ -13,12 +13,11 @@ set(RootNode,'index',i);
 ray = SingleRay;
 ray.origin = [-200;70;1];
 ray.direction = [1;0;0];
-ray.distance = 152;
+ray.distance = 250;
 ray.endpoint = ray.origin+ray.distance.*(ray.direction);
 
 explore_octree(RootNode, ray);
-explore_octree(RootNode, ray);
-explore_octree(RootNode, ray);
-explore_octree(RootNode, ray);
-explore_octree(RootNode, ray);
-explore_octree(RootNode, ray);
+
+figure
+visualize_octree(RootNode)
+view(138,60)
