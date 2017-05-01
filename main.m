@@ -11,8 +11,8 @@ set(RootNode,'index',i);
 
 % First ray comes here
 ray = SingleRay;
-ray.origin = [-200;70;1];
-ray.direction = [1;0;0];
+ray.origin = [-100;70;1];
+ray.direction = [1;1;0];
 ray.distance = 250;
 ray.endpoint = ray.origin+ray.distance.*(ray.direction);
 
