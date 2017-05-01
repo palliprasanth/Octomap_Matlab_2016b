@@ -1,5 +1,5 @@
 clc
-clear all
+clearvars
 close all
 
 %This is the root node of the tree
@@ -11,14 +11,19 @@ set(RootNode,'index',i);
 
 % First ray comes here
 ray = SingleRay;
-ray.origin = [-200;70;1];
-ray.direction = [1;0;0];
-ray.distance = 150;
+ray.origin = [100;1;1];
+ray.direction = [-1;1;0];
+ray.direction = ray.direction/norm(ray.direction);
+ray.distance = 75;
 ray.endpoint = ray.origin+ray.distance.*(ray.direction);
+ray = ray.calc_inv_direction();
+ray = ray.calc_sign();
 
 explore_octree(RootNode, ray);
 
 figure
+global a
+a = colormap;
 visualize_octree(RootNode)
 colorbar
-view(138,60)
+view(3)

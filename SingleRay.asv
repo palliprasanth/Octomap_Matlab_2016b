@@ -5,7 +5,7 @@ classdef SingleRay
         endpoint = zeros(3,1);
         direction = zeros(3,1);
         inv_direction = zeros(3,1);
-        sign = zeros(3,1); %Boolean vector, 1 is positive, 0 is negative
+        sign = zeros(3,1); %%
         distance = 0;
         is_in_range = true;
     end
@@ -16,7 +16,7 @@ classdef SingleRay
         end
         
         function object = calc_sign(object)
-            object.sign = (object.inv_direction<0);
+            object.inv_direction = ones(3,1)./object.direction;
         end
         
     end

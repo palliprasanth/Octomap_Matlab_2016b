@@ -2,6 +2,7 @@ function [] = explore_octree(Node, Ray)
 global i
 value = is_ray_intersecting(Node,Ray);
 if value == 1
+    Node.is_visited = true;
     if (Node.depth < OctomapConstants.max_depth_level)
         Kids = Node.get_children;
         if(isempty(Kids))
