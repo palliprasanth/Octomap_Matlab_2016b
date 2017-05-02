@@ -5,8 +5,6 @@ if (Node.depth < OctomapConstants.max_depth_level)
         for iter = 1:8
             visualize_octree(Kids(iter));
         end
-        set(Node,'children',Kids);
-        Node.set_children_centers();
     end
 else
     if (Node.is_visited)
