@@ -8,7 +8,8 @@ if (Node.depth < OctomapConstants.max_depth_level)
     end
 else
     if (Node.is_visited)
-        cube_visualization(Node);
+        if (Node.log_likelihood >=OctomapConstants.occ_threshold)
+            cube_visualization(Node);
+        end
     end
-end
 end
