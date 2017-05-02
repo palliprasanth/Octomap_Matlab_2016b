@@ -6,9 +6,10 @@ close all
 global i
 i = 0;
 RootNode = OctoNode;
+RootNode.center = [20;0;0]; %For pose 4
 set(RootNode,'index',i);
 
-for iteration = 77:77
+for iteration = 3:5
     iteration
     if (iteration <= 9)
         temp_str = 'data/scan_00';
@@ -30,7 +31,7 @@ for iteration = 77:77
     % FOR POSE AND TRANSFORMATION MATRIX
     Transformation_matrix=[eul2rotm([A(2,4:6)]) A(2,1:3)';0 0 0 1];
     % FOR OBSERVED POINTS IN WORLD COORDINATES
-    for j=1:50:iter
+    for j=1:iter
         W_observed_points=Transformation_matrix*[B(j,4:6) 1]';
         W_sensor_points=Transformation_matrix*[B(j,1:3) 1]';
         ray.origin=[W_sensor_points(1) W_sensor_points(2) W_sensor_points(3)]';
@@ -66,14 +67,4 @@ a = colormap;
 visualize_octree(RootNode)
 colorbar
 view(3)
-axis([-OctomapConstants.x_dim_limits,OctomapConstants.x_dim_limits, -OctomapConstants.y_dim_limits, OctomapConstants.y_dim_limits, -OctomapConstants.z_dim_limits, OctomapConstants.z_dim_limits]);
-% % First ray comes here
-% ray = SingleRay;
-% ray.origin = [100;1;1];
-% ray.direction = [-1;1;0];
-% ray.direction = ray.direction/norm(ray.direction);
-% ray.distance = 75;
-% ray.endpoint = ray.origin+ray.distance.*(ray.direction);
-% ray = ray.calc_inv_direction();
-% ray = ray.calc_sign();
-
+axis([RootNode.center(1)-OctomapConstants.x_dim_limits,RootNode.center(1)+OctomapConstants.x_dim_limits, RootNode.center(2)-OctomapConstants.y_dim_limits, RootNode.center(2)+OctomapConstants.y_dim_limits, RootNode.center(3)-OctomapConstants.z_dim_limits, RootNode.center(3)+OctomapConstants.z_dim_limits]);

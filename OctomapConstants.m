@@ -1,9 +1,9 @@
 classdef OctomapConstants
     properties (Constant)
         dim_limits = 230; % limits of the dimensions in metres
-        x_dim_limits = 5; % limits of the dimensions in metres
-        y_dim_limits = 5; % limits of the dimensions in metres
-        z_dim_limits = 5; % limits of the dimensions in metres
+        x_dim_limits = 20; % limits of the dimensions in metres
+        y_dim_limits = 20; % limits of the dimensions in metres
+        z_dim_limits = 7; % limits of the dimensions in metres
         l_free = -0.4; % Corresponds to probability of 0.4
         l_occupied = 0.85; % Corresponds to probability of 0.7
         l_min = -2; % Corresponds to probability of 0.12
