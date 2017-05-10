@@ -9,4 +9,3 @@ else
     log_likelihood = OctomapConstants.l_free;
 end
 end
-

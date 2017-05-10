@@ -1,13 +1,14 @@
 classdef OctoNode < handle & matlab.mixin.SetGet
     properties (GetAccess = 'public', SetAccess = 'public')
         % Constructor for the class
-        index = 0;
+%         index = 0;
         is_visited = false;
         center = zeros(3,1); %Center of the node
         depth = 0;
         log_likelihood = 0; % Prior probability is 0.5
         parent= []; %Will add an Octonode of the parent here%
         children = [] %Will add the Octonodes for the chidren here;
+        is_culled = false;
     end
     
     methods
