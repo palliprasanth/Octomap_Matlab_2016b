@@ -7,7 +7,7 @@ RootNode.center = [75;-60;12]; %For pose 4
 % set(RootNode,'index',i);
 
  load pointclouds.mat
- gridstep = 0.5;
+ gridstep = 1;
  Points = pointCloud(map_points_laser_data,'Normal',map_points_sensor_pos);
  Points = pcdownsample(Points,'gridAverage',gridstep);
  tic
@@ -33,3 +33,6 @@ visualize_octree(RootNode)
 colorbar
 view(3)
 axis([RootNode.center(1)-OctomapConstants.x_dim_limits,RootNode.center(1)+OctomapConstants.x_dim_limits, RootNode.center(2)-OctomapConstants.y_dim_limits, RootNode.center(2)+OctomapConstants.y_dim_limits, RootNode.center(3)-OctomapConstants.z_dim_limits, RootNode.center(3)+OctomapConstants.z_dim_limits]);
+
+likelihood_query([100;15;8],4,RootNode);
+% cull_octree(RootNode)
