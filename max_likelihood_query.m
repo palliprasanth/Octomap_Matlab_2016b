@@ -1,4 +1,9 @@
 function value = max_likelihood_query(Node,Point,Depth_Level)
+
+% Node is an Octonode object
+% Point is a 3 dimensional vector
+% Depth_Level is the specified depth at which the query is to be made.
+
 global a
 Kids = Node.get_children;
 Cur_depth = Node.depth + 1;

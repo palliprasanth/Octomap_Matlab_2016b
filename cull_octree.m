@@ -1,4 +1,9 @@
 function [] = cull_octree(Node)
+% This function is used for deleting the sub-nodes which have identical
+% likelihood values. The threshold for this is defined in OctomapConstants.culling_threshold
+
+% Node is an OctoNode object
+
 Kids = Node.get_children;
 
 if (isempty(Kids))

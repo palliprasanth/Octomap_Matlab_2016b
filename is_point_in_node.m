@@ -1,5 +1,8 @@
 function value = is_point_in_node(Node,Point)
+% This function isused for checking if a Point lies within an OctoNode
+
 % Node is an OctoNode object
+% Point is a 3-Dimensional point in space.
 
 xlim = Node.getxlimits();
 ylim = Node.getylimits();

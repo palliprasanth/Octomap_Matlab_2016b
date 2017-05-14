@@ -1,4 +1,10 @@
 function [] = cube_visualization(Node)
+% This function plots a colored cube for the OctoNode passed as an
+% argument. The color chosen depends on the likelihood value of the node
+% being plotted.
+
+% Node is an OctoNode object
+
 global a
 node_center = Node.center;
 hx=OctomapConstants.x_dim_limits/2^(Node.depth);

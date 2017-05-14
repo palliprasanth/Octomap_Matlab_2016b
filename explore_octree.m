@@ -1,4 +1,11 @@
 function [] = explore_octree(Node, Ray)
+% This function is used for initializing the OctoNodes of the Octree which
+% are passing through the measurement ray and update the likelihoods at the
+% specified depth level
+
+% Node is an OctoNode object
+% Ray is a SingleRay object
+
 value = is_ray_intersecting(Node,Ray);
 if value == 1
     Node.is_visited = true;

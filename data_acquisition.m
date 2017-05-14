@@ -6,7 +6,6 @@ count = 0;
 map_points_sensor_pos= [];
 map_points_laser_data= [];
 for iteration = 1:77
-    iteration
     if (iteration <= 9)
         temp_str = 'data/scan_00';
     else
@@ -14,16 +13,13 @@ for iteration = 1:77
     end
     data_file_pose = strcat([temp_str num2str(iteration) '_robotPoses.dat']) ;
     data_file_points = strcat([temp_str num2str(iteration) '_points.dat']) ;
-    %     data_file_far = strcat([temp_str num2str(iteration) '_farRanges.dat']) ;
     
     A = importdata(data_file_pose);
     B = importdata(data_file_points);
-    %     C= importdata(data_file_far);
     
     iter=size(B,1);
     map_points_sensor_pos = [map_points_sensor_pos;zeros(iter,3)];
     map_points_laser_data = [map_points_laser_data;zeros(iter,3)];
-    %     iter1=size(C,1);
     
     % FOR POSE AND TRANSFORMATION MATRIX
     Transformation_matrix=[eul2rotm([A(2,6) A(2,5) A(2,4)]) A(2,1:3)';0 0 0 1];

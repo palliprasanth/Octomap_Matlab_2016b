@@ -1,4 +1,10 @@
 function value = likelihood_query(Point,Depth_Level,RootNode)
+% This function returns the likelihood at a Point, given the specified
+% depth level
+
+% Point is a 3D vector in space where the likelihood query is required.
+% Depth_Level is the required depth level at which query is to be made.
+% RootNode is an Octonode object of the root of the Octree.
 
 if (Depth_Level > OctomapConstants.max_depth_level )
     value = 0;
